@@ -54,7 +54,7 @@ cd /home/yc-user && git clone -b monolith https://github.com/express42/reddit.gi
 ```
 7. Проверка ДЗ
 ```
-testapp_IP = 158.160.46.18
+testapp_IP = 51.250.93.252
 testapp_port = 9292
 ```
 
