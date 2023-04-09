@@ -1,6 +1,17 @@
 # dmzotov-ru_infra
 dmzotov-ru Infra repository
 
+## Знакомство с Terraform
+1. Создаем ветку **terraform-1**
+```
+git checkout -b terraform-1
+```
+2. Создадим и подготовим main.tf
+3. Создание VM terraform plan / apply
+4. Добавление outputs и provision секции.
+5. Описание переменных variables.tf
+6. Доп задание с network load balancer
+
 ## Основные сервисы Yandex Cloud
 1. Создаем ветку **cloud-testapp**
 ```
