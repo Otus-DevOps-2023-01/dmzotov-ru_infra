@@ -1,1 +1,9 @@
 variables.json
+otus.code-workspace
+sa-otus-key.json
+*.tfstate
+*.tfstate.*.backup
+*.tfstate.backup
+*.tfvars
+.terraform/
+.terraform.lock.hcl
