@@ -1,6 +1,38 @@
 # dmzotov-ru_infra
 dmzotov-ru Infra repository
 
+## Принципы организации инфраструктурного кода
+1. Создаем ветку **terraform-2**
+2. Переносим lb.tf
+3. Создадим ресурсы сети и подсети
+```
+resource "yandex_vpc_network" "app-network" {
+  name = "reddit-app-network"
+}
+
+resource "yandex_vpc_subnet" "app-subnet" {
+  name           = "reddit-app-subnet"
+  zone           = "ru-central1-a"
+  network_id     = "${yandex_vpc_network.app-network.id}"
+  v4_cidr_blocks = ["192.168.10.0/24"]
+}
+```
+4. Подготовим шаблоны для Packer (app.json и db.json) и создадим образы
+5. Вносим правки в main.tf, разбив его на части app.tf и db.tf. В отдельный файл перенесем описание сети vpc.tf
+6. Задекларируем новые перменные app_disk_image и db_disk_images.
+7. Вносим правки в outputs.tf
+8. Подготавливаем модульную структуру. Создаем папки modules\app и modules\db. Исправляем outputs, подгружаем подумали командой terraform get и проверяем корректность работы
+9. По аналогии подгтовим окружения stage и prod.
+10. Добавим s3 object storage в качестве backend для terraform
+
+
+
+
+
+
+
+
+
 ## Знакомство с Terraform
 1. Создаем ветку **terraform-1**
 ```
