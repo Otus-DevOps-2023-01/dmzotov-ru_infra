@@ -9,7 +9,7 @@ variable "service_account_key" {
 }
 variable "zone" {
   description = "Zone"
-  default = "ru-central1-a"
+  default     = "ru-central1-a"
 }
 variable "image_id" {
   description = "Image_id"
@@ -30,4 +30,12 @@ variable "region_id" {
 variable "instances_count" {
   description = "Count instances"
   default     = 1
+}
+variable "app_disk_image" {
+  description = "Disk image for reddit app"
+  default     = "reddit-app-base"
+}
+variable "db_disk_image" {
+  description = "Disk image for reddit app"
+  default     = "reddit-db-base"
 }
