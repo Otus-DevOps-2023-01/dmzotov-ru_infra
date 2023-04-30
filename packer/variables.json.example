@@ -1,5 +1,5 @@
 {
-    "json-key": "key.json",
+    "json-key": "./packer/key.json",
     "folder-id": "folder",
     "image": "astra1.7.3"
 }
