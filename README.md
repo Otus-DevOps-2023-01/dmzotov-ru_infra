@@ -1,6 +1,55 @@
 # dmzotov-ru_infra
 dmzotov-ru Infra repository
 
+## Управление конфигурацией. Знакомство с Ansible
+1. Создаем ветку **ansible-1**
+```
+git checkout -b ansible-1
+```
+2. Выполняем установку Ansible (В случае если ранее не был установлен)
+3. Создаем каталог **ansible** в репозитории.
+4. Поднимаем окружение stage из домашнего задания terraform-2 с помощью команды **terraform apply**
+5. Создадим и заполним файл inventory по шаблону на основе вывода outputs terraform.
+6. Проверяем доступность сервера командой
+```
+ansible appserver -i ./inventory -m ping
+```
+7. Создадим ansible.cfg
+```
+[defaults]
+inventory            = ./inventory.json
+remote_user           = ubuntu
+private_key_file     = ~/.ssh/id_rsa
+host_key_checking    = False
+retry_files_enabled  = False
+```
+8. Создадим inventory.yml
+```
+app:
+  hosts:
+    appserver:
+      ansible_host: 51.250.85.240
+
+db:
+  hosts:
+    dbserver:
+      ansible_host: 158.160.61.61
+```
+9. Пишем playbook clone.yml
+```
+---
+- name: Clone
+  hosts: app
+  tasks:
+    - name: Clone repo
+      git:
+        repo: https://github.com/express42/reddit.git
+        dest: /home/ubuntu/reddit
+```
+10. При первом выполнение playbook мы видим статус CHANGED для таски в плейбуке. При повторном использовании playbook статус будет отображаться как OK. Это называется идемпотентностью.
+
+
+
 ## Принципы организации инфраструктурного кода
 1. Создаем ветку **terraform-2**
 2. Переносим lb.tf
