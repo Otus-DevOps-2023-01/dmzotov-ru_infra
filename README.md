@@ -1,6 +1,17 @@
 # dmzotov-ru_infra
 dmzotov-ru Infra repository
 
+## Продолжение знакомства с Ansible: templates, handlers, dynamic inventory, vault, tags
+
+1.  Создаем ветку  **ansible-2**
+```bash
+git checkout -b ansible-1
+```
+2. Создаем playbook reddit_app.yml заполняем его и тестируем работоспособность
+3. Создаем playbook на несколько сценариев reddit_app2.yml
+4. Разбиваем наш playbook на несколько: app.yml, db.yml, deploy.yml и переименовываем наши старые playbook-и в **reddit_app_multiple_plays.yml** и **reddit_app_one_play.yml**
+5. Модифицируем наши провижионеры в packer, меняеем их на ansible, указываем пути до плейбуков и пересобираем образы, указываем новые образы в переменных для окружения терраформа.
+
 ## Управление конфигурацией. Знакомство с Ansible
 1. Создаем ветку **ansible-1**
 ```
@@ -46,7 +57,7 @@ db:
         repo: https://github.com/express42/reddit.git
         dest: /home/ubuntu/reddit
 ```
-10. При первом выполнение playbook мы видим статус CHANGED для таски в плейбуке. При повторном использовании playbook статус будет отображаться как OK. Это называется идемпотентностью.
+10. При первом выполнение playbook мы видим статус CHANGED для таски в playbookе. При повторном использовании playbook статус будет отображаться как OK. Это называется идемпотентностью.
 
 
 
