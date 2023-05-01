@@ -7,3 +7,4 @@ sa-otus-key.json
 *.tfvars
 .terraform/
 .terraform.lock.hcl
+*.retry
