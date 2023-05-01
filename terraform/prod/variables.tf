@@ -9,7 +9,7 @@ variable "service_account_key" {
 }
 variable "zone" {
   description = "Zone"
-  default = "ru-central1-a"
+  default     = "ru-central1-a"
 }
 variable "image_id" {
   description = "Image_id"
@@ -38,13 +38,4 @@ variable "app_disk_image" {
 variable "db_disk_image" {
   description = "Disk image for reddit app"
   default     = "reddit-db-base"
-}
-variable "bucket_name" {
-  description = "S3 Bucket name"
-}
-variable "access_key" {
-  description = "Access key for s3 bucket"
-}
-variable "secret_key" {
-  description = "Secret key for s3 bucket"
 }

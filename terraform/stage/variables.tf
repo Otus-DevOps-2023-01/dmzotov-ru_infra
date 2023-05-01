@@ -39,12 +39,3 @@ variable "db_disk_image" {
   description = "Disk image for reddit app"
   default     = "reddit-db-base"
 }
-variable "bucket_name" {
-  description = "S3 Bucket name"
-}
-variable "access_key" {
-  description = "Access key for s3 bucket"
-}
-variable "secret_key" {
-  description = "Secret key for s3 bucket"
-}
