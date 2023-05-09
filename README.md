@@ -1,6 +1,36 @@
 # dmzotov-ru_infra
 dmzotov-ru Infra repository
 
+## Ansible роли, управление настройками нескольких окружений и best practices
+
+1. Создаем ветку **ansible-3**
+2. С помощью **ansible-galaxy** создаем заготовки пол роли
+```bash
+ansible-galaxy init app
+ansible-galaxy init db
+```
+3. Переводим наши плейбуки в роли
+4. Модифицируем плейбуки на запуск ролей
+```
+---
+- name: Configure MongoDB
+  hosts: db
+  become: true
+
+
+  roles:
+    - db
+```
+5. Проверяем фунцкионал ролей
+```bash
+ansible-playbook site.yml
+```
+6. Модифицируем **ansible.cfg** и вводим переменные окружения для сред **prod** и **stage**
+7. Организуем плейбуки согласно **Best Practices**
+8. Учимся использовать комьюнити роли на примере **jdauphant.nginx**
+9. Учимся использовать **ansible-vault**
+10. Проверяем функционал
+
 ## Продолжение знакомства с Ansible: templates, handlers, dynamic inventory, vault, tags
 
 1.  Создаем ветку  **ansible-2**
