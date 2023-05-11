@@ -1,6 +1,23 @@
 # dmzotov-ru_infra
 dmzotov-ru Infra repository
 
+## Локальная разработка Ansible ролей с Vagrant. Тестирование конфигурации.
+1. Установка **vagrant**
+2. Описываем локальную инфраструктуру в **Vagrantfile**
+3. Дорабатываем роли и учимся использовать *provisioner*
+3. Переделываем *deploy.yml*
+4. Проверяем сборку в vagrant
+5. Устанавливаем **pip**, а затем с помощью его **virtualenv**
+6. Устанавливаем все необходимые пакеты *pip install -r requirements.txt*
+7. Создаем заготовку molecule с помощью команды *molecule init scenario --scenario-name default -r db -d vagrant*
+8. Добавляем собственнные тесты
+9. Собираем и тестируем нашу конфигурацию
+
+
+
+
+
+
 ## Ansible роли, управление настройками нескольких окружений и best practices
 
 1. Создаем ветку **ansible-3**
